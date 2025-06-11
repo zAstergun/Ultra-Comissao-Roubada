@@ -70,16 +70,19 @@
                 <p id="totalNetSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 40.721,53</p>
             </div>
 
-            <!-- Gráfico de Pizza: Composição da Venda -->
-            <div class="chart-container md:col-span-2 lg:col-span-2">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Composição da Venda Bruta por Categoria</h3>
-                <canvas id="salesCompositionChart"></canvas>
-            </div>
+            <!-- Seção dos Gráficos (Container Pai) -->
+            <div class="col-span-1 md:col-span-2 lg:col-span-4 grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <!-- Gráfico de Pizza: Composição da Venda (maior) -->
+                <div class="chart-container lg:col-span-3 h-[450px]">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Composição da Venda Bruta</h3>
+                    <canvas id="salesCompositionChart"></canvas>
+                </div>
 
-            <!-- Gráfico de Barras: Comparativo de Comissão -->
-            <div class="chart-container md:col-span-2 lg:col-span-2">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Comparativo de Comissão por Categoria</h3>
-                <canvas id="commissionComparisonChart"></canvas>
+                <!-- Gráfico de Barras: Comparativo de Comissão (menor) -->
+                <div class="chart-container lg:col-span-2 h-[450px]">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Comissão por Categoria</h3>
+                    <canvas id="commissionComparisonChart"></canvas>
+                </div>
             </div>
             
             <!-- Tabela de Dados Detalhada -->
