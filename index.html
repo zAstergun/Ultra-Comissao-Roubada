@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Análise de Vendas - Ulisses</title>
+    <title>Painel de Análise de Vendas - Valderes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
         <!-- Cabeçalho -->
         <header class="mb-8">
             <h1 class="text-3xl font-bold text-gray-800">Painel de Análise de Vendas e Comissões</h1>
-            <p class="text-lg text-gray-500">Referência: Ulisses - Maio de 2025</p>
+            <p class="text-lg text-gray-500">Referência: Valderes - Maio de 2025</p>
         </header>
 
         <!-- Grade Principal do Dashboard -->
@@ -47,27 +47,27 @@
             <!-- Card KPI: Comissão (Bruta) -->
             <div class="kpi-card col-span-1 md:col-span-2 lg:col-span-1 bg-blue-500 text-white">
                 <h3 class="text-lg font-semibold text-blue-100">Comissão (Sobre Venda Bruta)</h3>
-                <p id="totalGrossCommission" class="text-4xl font-bold mt-2">R$ 2.240,84</p>
+                <p id="totalGrossCommission" class="text-4xl font-bold mt-2">R$ 1.851,51</p>
                 <p class="text-blue-200 mt-1">Cenário mais favorável</p>
             </div>
 
             <!-- Card KPI: Comissão (Líquida) -->
             <div class="kpi-card col-span-1 md:col-span-2 lg:col-span-1 bg-red-500 text-white">
                 <h3 class="text-lg font-semibold text-red-100">Comissão (Sobre Venda Líquida)</h3>
-                <p id="totalNetCommission" class="text-4xl font-bold mt-2">R$ 1.051,25</p>
+                <p id="totalNetCommission" class="text-4xl font-bold mt-2">R$ 910,40</p>
                 <p class="text-red-200 mt-1">Cenário menos favorável</p>
             </div>
             
              <!-- Card KPI: Venda Bruta Total -->
             <div class="kpi-card col-span-1">
                 <h3 class="text-lg font-semibold text-gray-500">Sua Venda Bruta Total</h3>
-                <p id="totalGrossSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 71.551,37</p>
+                <p id="totalGrossSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 69.440,68</p>
             </div>
 
             <!-- Card KPI: Venda Líquida Total -->
             <div class="kpi-card col-span-1">
                 <h3 class="text-lg font-semibold text-gray-500">Sua Venda Líquida Total</h3>
-                <p id="totalNetSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 40.721,53</p>
+                <p id="totalNetSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 44.301,25</p>
             </div>
 
             <!-- Seção dos Gráficos (Container Pai) -->
@@ -120,13 +120,13 @@
     </div>
 
     <script>
-        // Dados brutos
+        // Dados brutos para Valderes
         const salesData = [
-            { category: 'Genérico', gross: 40368.36, net: 14386.07, rate: 0.04 },
-            { category: 'Similar', gross: 10501.34, net: 7107.21, rate: 0.04 },
-            { category: 'Ético', gross: 9353.27, net: 8418.29, rate: 0.01 },
-            { category: 'Varejo', gross: 5929.30, net: 5645.75, rate: 0.01 },
-            { category: 'Perfumaria', gross: 5324.11, net: 5088.22, rate: 0.01 },
+            { category: 'Genérico', gross: 29737.42, net: 10425.97, rate: 0.04 },
+            { category: 'Ético', gross: 14247.47, net: 12767.15, rate: 0.01 },
+            { category: 'Perfumaria', gross: 9194.48, net: 8783.34, rate: 0.01 },
+            { category: 'Similar', gross: 8832.75, net: 5153.80, rate: 0.04 },
+            { category: 'Varejo', gross: 7428.56, net: 7170.99, rate: 0.01 },
         ];
 
         // Função para formatar números como moeda brasileira (BRL)
@@ -151,7 +151,10 @@
         
         // Popula a tabela
         const tableBody = document.getElementById('dataTable');
-        salesData.forEach(item => {
+        // Ordena os dados para exibição na tabela (opcional, mas bom para consistência)
+        const sortedSalesData = [...salesData].sort((a, b) => b.gross - a.gross);
+
+        sortedSalesData.forEach(item => {
             const row = `
                 <tr class="hover:bg-gray-50">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${item.category}</td>
@@ -186,7 +189,7 @@
                 datasets: [{
                     label: 'Venda Bruta',
                     data: grossSales,
-                    backgroundColor: ['#3b82f6', '#10b981', '#f97316', '#8b5cf6', '#ec4899'],
+                    backgroundColor: ['#3b82f6', '#f97316', '#ec4899', '#10b981', '#8b5cf6'],
                     borderColor: '#ffffff',
                     borderWidth: 3,
                 }]
