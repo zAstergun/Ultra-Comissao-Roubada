@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Análise de Vendas - Josiane</title>
+    <title>Painel de Análise de Vendas - Chirliane</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
         <!-- Cabeçalho -->
         <header class="mb-8">
             <h1 class="text-3xl font-bold text-gray-800">Painel de Análise de Vendas e Comissões</h1>
-            <p class="text-lg text-gray-500">Referência: Josiane - Maio de 2025</p>
+            <p class="text-lg text-gray-500">Referência: Chirliane - Maio de 2025</p>
         </header>
 
         <!-- Grade Principal do Dashboard -->
@@ -47,27 +47,27 @@
             <!-- Card KPI: Comissão (Bruta) -->
             <div class="kpi-card col-span-1 md:col-span-2 lg:col-span-1 bg-blue-500 text-white">
                 <h3 class="text-lg font-semibold text-blue-100">Comissão (Sobre Venda Bruta)</h3>
-                <p id="totalGrossCommission" class="text-4xl font-bold mt-2">R$ 1.455,22</p>
+                <p id="totalGrossCommission" class="text-4xl font-bold mt-2">R$ 1.469,60</p>
                 <p class="text-blue-200 mt-1">Cenário mais favorável</p>
             </div>
 
             <!-- Card KPI: Comissão (Líquida) -->
             <div class="kpi-card col-span-1 md:col-span-2 lg:col-span-1 bg-red-500 text-white">
                 <h3 class="text-lg font-semibold text-red-100">Comissão (Sobre Venda Líquida)</h3>
-                <p id="totalNetCommission" class="text-4xl font-bold mt-2">R$ 704,01</p>
+                <p id="totalNetCommission" class="text-4xl font-bold mt-2">R$ 750,63</p>
                 <p class="text-red-200 mt-1">Cenário menos favorável</p>
             </div>
             
              <!-- Card KPI: Venda Bruta Total -->
             <div class="kpi-card col-span-1">
                 <h3 class="text-lg font-semibold text-gray-500">Sua Venda Bruta Total</h3>
-                <p id="totalGrossSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 56.004,00</p>
+                <p id="totalGrossSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 55.947,47</p>
             </div>
 
             <!-- Card KPI: Venda Líquida Total -->
             <div class="kpi-card col-span-1">
                 <h3 class="text-lg font-semibold text-gray-500">Sua Venda Líquida Total</h3>
-                <p id="totalNetSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 35.830,99</p>
+                <p id="totalNetSales" class="text-4xl font-bold text-gray-800 mt-2">R$ 36.467,53</p>
             </div>
 
             <!-- Seção dos Gráficos (Container Pai) -->
@@ -120,13 +120,13 @@
     </div>
 
     <script>
-        // Dados brutos para Josiane
+        // Dados brutos para Chirliane
         const salesData = [
-            { category: 'Genérico', gross: 22728.89, net: 7545.55, rate: 0.04 },
-            { category: 'Ético', gross: 10012.23, net: 8893.27, rate: 0.01 },
-            { category: 'Perfumaria', gross: 9697.49, net: 9215.99, rate: 0.01 },
-            { category: 'Similar', gross: 7110.42, net: 3977.65, rate: 0.04 },
-            { category: 'Varejo', gross: 6454.97, net: 6198.53, rate: 0.01 },
+            { category: 'Genérico', gross: 24140.54, net: 9064.94, rate: 0.04 },
+            { category: 'Ético', gross: 12865.48, net: 11293.66, rate: 0.01 },
+            { category: 'Perfumaria', gross: 6617.85, net: 6362.07, rate: 0.01 },
+            { category: 'Varejo', gross: 6126.38, net: 5946.81, rate: 0.01 },
+            { category: 'Similar', gross: 6197.22, net: 3800.05, rate: 0.04 }
         ];
 
         // Função para formatar números como moeda brasileira (BRL)
@@ -189,7 +189,7 @@
                 datasets: [{
                     label: 'Venda Bruta',
                     data: grossSales,
-                    backgroundColor: ['#3b82f6', '#f97316', '#ec4899', '#10b981', '#8b5cf6'],
+                    backgroundColor: ['#3b82f6', '#f97316', '#ec4899', '#8b5cf6', '#10b981'],
                     borderColor: '#ffffff',
                     borderWidth: 3,
                 }]
